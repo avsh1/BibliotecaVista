@@ -1,0 +1,59 @@
+﻿@page "/autor/index"
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@inject ILocalStorageService _localStorageService
+
+<MudText Typo="Typo.h2" Class="ml">Autores</MudText>
+
+<MudTable Items="@autores" Dense="true" Hover="true" Bordered="true" Striped="true">
+    <ToolBarContent>
+        <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" OnClick="goAdd" />
+        <MudSpacer />
+        <MudTextField @bind-Value="searchText" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Id</MudTh>
+        <MudTh>Nombre</MudTh>
+        <MudTh>Nacionalidad</MudTh>
+        <MudTh>Acciones</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Id">@context.Id</MudTd>
+        <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
+        <MudTd DataLabel="Nacionalidad">@context.Nacionalidad</MudTd>
+
+
+        <MudTd>
+            <MudButton Href="@($"/autor/editar/{context.Id}")" Size="Size.Small" Variant="Variant.Outlined"
+                       Color="Color.Tertiary" Class="text-center">Editar</MudButton>
+            <MudButton Href="@($"/autor/eliminar/{context.Id}")" Size="Size.Small" Variant="Variant.Outlined"
+                       Color="Color.Warning" Class="text-center">Eliminar</MudButton>
+        </MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+
+@code {
+    private IEnumerable<Autor> autores = new List<Autor>();
+    private string searchText = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        httpClient.DefaultRequestHeaders.Authorization =
+            new AuthenticationHeaderValue("Bearer", await _localStorageService.GetItemAsync<string>("token"));
+        await getAll();
+    }
+
+    private async Task getAll()
+    {
+        var httpResponse = await httpClient.GetStringAsync("autores/lista"); // Java
+        autores = JsonSerializer.Deserialize<IEnumerable<Autor>>(httpResponse, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    }
+
+    private void goAdd()
+    {
+        navigationManager.NavigateTo("autor/agregar");
+    }
+}

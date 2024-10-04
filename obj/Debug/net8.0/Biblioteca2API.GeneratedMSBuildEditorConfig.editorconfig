@@ -1,0 +1,90 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.MudDebugAnalyzer = 
+build_property.MudAllowedAttributePattern = 
+build_property.MudIllegalParameters = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Biblioteca2API
+build_property.RootNamespace = Biblioteca2API
+build_property.ProjectDir = C:\Users\alvar\source\Proyecto1\Biblioteca2API\Biblioteca2API\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\alvar\source\Proyecto1\Biblioteca2API\Biblioteca2API
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Layout/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XExvZ2luTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Autor/Agregar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0b3JcQWdyZWdhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Autor/Eliminar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0b3JcRWxpbWluYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Autor/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0b3JcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Autor/Modificar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0b3JcTW9kaWZpY2FyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Libro/Agregar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlicm9cQWdyZWdhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Libro/Detalle.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlicm9cRGV0YWxsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Libro/Eliminar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlicm9cRWxpbWluYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Libro/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlicm9cSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Pages/Libro/Modificar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlicm9cTW9kaWZpY2FyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-gt45caxz5q
+
+[C:/Users/alvar/source/Proyecto1/Biblioteca2API/Biblioteca2API/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-frlqujujqc

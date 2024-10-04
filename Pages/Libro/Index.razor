@@ -1,0 +1,68 @@
+﻿@page "/libro/index"
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@inject ILocalStorageService _localStorageService
+
+<MudText Typo="Typo.h2" Class="ml">Libros</MudText>
+
+<MudTable Items="@libros" Hover="true" Bordered="true" Striped="true">
+    <ToolBarContent>
+        <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" OnClick="goAdd" />
+        <MudSpacer />
+        @* <MudTextField @bind-Value="searchText" OnKeyUp="searchByName" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField> *@
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Id</MudTh>
+        <MudTh>Título</MudTh>
+        <MudTh>NombreAutor</MudTh>
+        <MudTh>Publicacion</MudTh>
+        <MudTh>Editorial</MudTh>
+        <MudTh>Autor</MudTh>
+        <MudTh>Acciones</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Id">@context.Id</MudTd>
+        <MudTd DataLabel="Título">@context.Titulo</MudTd>
+        <MudTd DataLabel="NombreAutor">@context.NombreAutor</MudTd>
+        <MudTd DataLabel="Publicacion">@context.Publicacion</MudTd>
+        <MudTd DataLabel="Editorial">@context.Editorial</MudTd>
+        <MudTd DataLabel="Autor">@context.Autor.Nombre</MudTd>
+
+        <MudTd>
+            <MudButton Href="@($"/libro/detalle/{context.Id}")" Size="Size.Small" Variant="Variant.Outlined" Color="Color.Info"
+                       Class="text-center">Detalle</MudButton>
+            <MudButton Href="@($"/libro/editar/{context.Id}")" Size="Size.Small" Variant="Variant.Outlined" Color="Color.Tertiary"
+                       Class="text-center">Editar</MudButton>
+            <MudButton Href="@($"/libro/eliminar/{context.Id}")" Size="Size.Small" Variant="Variant.Outlined" Color="Color.Warning"
+                       Class="text-center">Eliminar</MudButton>
+        </MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+
+@code {
+    private IEnumerable<Libro> libros = new List<Libro>();
+    private string searchText = "";
+    private Libro libro = new Libro();
+
+    protected override async Task OnInitializedAsync()
+    {
+        httpClient.DefaultRequestHeaders.Authorization =
+            new AuthenticationHeaderValue("Bearer", await _localStorageService.GetItemAsync<string>("token"));
+        await getAll();
+    }
+
+    private async Task getAll()
+    {
+        //var httpResponse = await httpClient.GetStringAsync("proyectos"); // .NET
+        var httpResponse = await httpClient.GetStringAsync("libros/lista"); // Java
+        libros = JsonSerializer.Deserialize<IEnumerable<Libro>>(httpResponse, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    }
+
+    private void goAdd()
+    {
+        navigationManager.NavigateTo("libro/agregar");
+    }
+}
